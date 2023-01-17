@@ -17,9 +17,13 @@ function classSwitcher() {
 }
 
 let goNext = () => {
-  active = active == slides.length - 1 ? 0 : active + 1;
+  active = (active == slides.length - 1) ? 0 : active + 1;
   classSwitcher();
 };
+let goPrev = () => {
+    active = (active == 0) ? slides.length - 1 : active - 1;
+    classSwitcher();
+  };
 // setInterval
 setInterval(goNext, timer);
 
@@ -30,3 +34,9 @@ points.forEach((point, index) => {
     classSwitcher();
   });
 });
+
+
+// next event
+next.addEventListener("click" , e => goNext())
+// prev event
+prev.addEventListener("click" , e => goPrev())
