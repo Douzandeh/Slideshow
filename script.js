@@ -1,6 +1,6 @@
 // variables
 let active = 0;
-let timer = 1000;
+let timer = 3000;
 
 let slidshow = document.querySelector(".slideshow");
 let slides = document.querySelectorAll(".slide");
