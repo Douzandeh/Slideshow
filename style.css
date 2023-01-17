@@ -41,7 +41,7 @@
     transition: font-size 0.5s;
 }
 .slide div:hover p {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .prev, .next{
     position: absolute;

@@ -1,6 +1,6 @@
 // variables
 let active = 0;
-let timer = 3000;
+let timer = 1000;
 
 let slidshow = document.querySelector(".slideshow");
 let slides = document.querySelectorAll(".slide");
@@ -25,7 +25,7 @@ let goPrev = () => {
     classSwitcher();
   };
 // setInterval
-setInterval(goNext, timer);
+let runSlideshow = setInterval(goNext, timer);
 
 //  points event
 points.forEach((point, index) => {
@@ -40,3 +40,9 @@ points.forEach((point, index) => {
 next.addEventListener("click" , e => goNext())
 // prev event
 prev.addEventListener("click" , e => goPrev())
+
+//  mouseover
+slidshow.addEventListener("mouseover" , e => clearInterval(runSlideshow))
+
+//  mouseleave
+slidshow.addEventListener("mouseleave" , e => runSlideshow = setInterval(goNext, timer))
